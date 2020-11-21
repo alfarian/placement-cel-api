@@ -1,0 +1,10 @@
+{
+    "dev": {
+        "driver": "mysql",
+        "host": "sql12.freemysqlhosting.net",
+        "port": "3306",
+        "user": "sql12376663",
+        "password": "7BVEGDmGGS",
+        "database": "sql12376663"
+    }
+}
