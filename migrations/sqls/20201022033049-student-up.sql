@@ -1,0 +1,1 @@
+CREATE TABLE IF NOT EXISTS student(student_id int NOT NULL AUTO_INCREMENT PRIMARY KEY, name varchar(50) NOT NULL);
