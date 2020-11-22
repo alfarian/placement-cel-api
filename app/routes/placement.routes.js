@@ -2,7 +2,8 @@ module.exports = app => {
   const student = require("../controllers/student.controller.js");
   const feed = require("../controllers/feeds.controller.js");
   const user = require("../controllers/user.controller.js");
-
+  const drive = require("../controllers/drive.controller.js");
+  
   // Create a new Student
   app.post("/student", student.create);
 
@@ -29,4 +30,11 @@ module.exports = app => {
 
   // Login
   app.post("/user/login", user.login);
+
+  //placement drive
+  app.post("/drive", drive.create);
+
+  // Retrieve all Drive
+  app.get("/drives", drive.findAll);
+
 };
