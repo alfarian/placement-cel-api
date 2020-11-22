@@ -4,7 +4,8 @@ module.exports = app => {
   const user = require("../controllers/user.controller.js");
   const drive = require("../controllers/drive.controller.js");
   const training = require("../controllers/training.controller.js");
-
+  const notification = require("../controllers/notification.controller.js");
+  
   // Create a new Student
   app.post("/student", student.create);
 
@@ -38,11 +39,14 @@ module.exports = app => {
   // Retrieve all Drive
   app.get("/drives", drive.findAll);
 
-   //training and workshops
-   app.post("/training", training.create);
+  //training and workshops
+  app.post("/training", training.create);
+  // Retrieve all Drive
+  app.get("/trainings", training.findAll);
 
-   // Retrieve all Drive
-   app.get("/trainings", training.findAll);
- 
+  //placement notification
+  app.post("/notification", notification.create);
 
+  // Retrieve all notification
+  app.get("/notifications", notification.findAll);
 };
