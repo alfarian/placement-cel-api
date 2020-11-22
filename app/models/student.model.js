@@ -79,7 +79,24 @@ Student.findById = (studentId, result) => {
 };
 
 Student.getAll = (result) => {
-  sql.query("SELECT * FROM student", (err, res) => {
+  sql.query(`select
+	student_id ,
+	name ,
+	register_no ,
+	gender ,
+	dob sem_year ,
+	mobile,
+	email ,
+	address ,
+	pincode ,
+	mark10 ,
+	mark12 ,
+	cgpa,
+	department.department_name
+FROM
+	student
+left join department on
+	student.department_id = department.department_id`, (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(null, err);
