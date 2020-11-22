@@ -17,7 +17,7 @@ app.use(function(req, res, next) {
 
 // simple route
 app.get("/status", (req, res) => {
-  res.json({ message: "up and healthy" });
+  res.json({ message: "up and healthy :)" });
 });
 
 require("./app/routes/placement.routes.js")(app);
