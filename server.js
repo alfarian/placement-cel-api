@@ -23,8 +23,8 @@ app.get("/status", (req, res) => {
     host: 'smtp.mailtrap.io',
     port: 2525,
     auth: {
-       user: 'put_your_username_here',
-       pass: 'put_your_password_here'
+      user: "757e720fd99051",
+      pass: "63392b47c3e50d"
     }
 });
 const message = {
