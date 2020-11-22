@@ -12,6 +12,18 @@ exports.create = (req, res) => {
   // Create a Student
   const student = new Student({
     name: req.body.name,
+    register_no: req.body.register_no,
+    gender: req.body.gender,
+    dob: req.body.dob,
+    department_id: req.body.department_id,
+    sem_year: req.body.sem_year,
+    mobile: req.body.mobile,
+    email: req.body.email,
+    address: req.body.address,
+    pincode: req.body.pincode,
+    mark10: req.body.mark10,
+    mark12: req.body.mark12,
+    cgpa: req.body.cgpa,
   });
 
   // Save Student in the database

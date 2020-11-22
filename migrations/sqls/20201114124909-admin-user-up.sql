@@ -1,1 +1,0 @@
-CREATE TABLE IF NOT EXISTS admin_user(admin_user_id int NOT NULL AUTO_INCREMENT PRIMARY KEY, password varchar(50) NOT NULL);

@@ -4,23 +4,63 @@ const sql = require("./db.js");
 const Student = function(student) {
   this.id = student.id;
   this.name = student.name;
+  this.register_no = student.register_no;
+  this.gender = student.gender;
+  this.dob = student.dob;
+  this.department_id = student.department_id;
+  this.sem_year = student.sem_year;
+  this.mobile = student.mobile;
+  this.email = student.email;
+  this.address = student.address;
+  this.pincode = student.pincode;
+  this.mark10 = student.mark10;
+  this.mark12 = student.mark12;
+  this.cgpa = student.cgpa;
 };
 
 Student.create = (newStudent, result) => {
-  sql.query("INSERT INTO student (name) VALUES (?)", newStudent.name, (err, res) => {
+  sql.query(`INSERT INTO student (
+    name,
+    register_no,
+    gender,
+    dob,
+    department_id,
+    sem_year,
+    mobile,
+    email,
+    address,
+    pincode,
+    mark10,
+    mark12,
+    cgpa
+    ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)`, [
+      newStudent.name,
+      newStudent.register_no,
+      newStudent.gender,
+      newStudent.dob,
+      newStudent.department_id,
+      newStudent.sem_year,
+      newStudent.mobile,
+      newStudent.email,
+      newStudent.address,
+      newStudent.pincode,
+      newStudent.mark10,
+      newStudent.mark12,
+      newStudent.cgpa,
+    ], (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(err, null);
       return;
     }
 
-    console.log("created student: ", { id: res.insertId, ...newStudent });
-    result(null, { id: res.insertId, ...newStudent });
+    console.log("created student: ", newStudent);
+    result(null, {result: "Success"} );
   });
 };
 
 Student.findById = (studentId, result) => {
-  sql.query(`SELECT student_id, name FROM student WHERE student_id = ${studentId}`, (err, res) => {
+  sql.query(`SELECT * FROM student WHERE student_id = ${studentId}`, (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(err, null);
@@ -39,7 +79,7 @@ Student.findById = (studentId, result) => {
 };
 
 Student.getAll = (result) => {
-  sql.query("SELECT student_id, name FROM student", (err, res) => {
+  sql.query("SELECT * FROM student", (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(null, err);
