@@ -1,1 +1,1 @@
-drop table if exists training
+DROP TABLE IF EXISTS training

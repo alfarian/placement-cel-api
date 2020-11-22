@@ -7,13 +7,13 @@ const Training = function(training) {
   this.details = training.details;
 };
 
-Training.create = (newTrain, result) => {
+Training.create = (newTraining, result) => {
   sql.query(`INSERT INTO training (
     name,
     details
     ) VALUES (?,?)`, [
-      newTrain.name,
-      newTrain.details,
+      newTraining.name,
+      newTraining.details,
     ], (err, res) => {
     if (err) {
       console.log("error: ", err);
@@ -21,7 +21,7 @@ Training.create = (newTrain, result) => {
       return;
     }
 
-    console.log("created drive: ", newTrain);
+    console.log("created drive: ", newTraining);
     result(null, {result: "Success"} );
   });
 };
