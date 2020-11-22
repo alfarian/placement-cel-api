@@ -19,27 +19,6 @@ app.use(function(req, res, next) {
 
 // simple route
 app.get("/status", (req, res) => {
-  let transport = nodemailer.createTransport({
-    host: 'smtp.mailtrap.io',
-    port: 2525,
-    auth: {
-      user: "757e720fd99051",
-      pass: "63392b47c3e50d"
-    }
-});
-const message = {
-  from: 'info@alfarians.com', // Sender address
-  to: 'adarsh97vtk@gmail.com',         // List of recipients
-  subject: 'Test | auto generated email', // Subject line
-  text: 'This is a test dont replay' // Plain text body
-};
-transport.sendMail(message, function(err, info) {
-  if (err) {
-    console.log(err)
-  } else {
-    console.log(info);
-  }
-});
 res.json({ message: "up and healthy :)" });
 });
 
