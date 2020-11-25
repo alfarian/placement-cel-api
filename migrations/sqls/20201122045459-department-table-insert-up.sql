@@ -1,1 +1,1 @@
-INSERT INTO department (department_name) values('Computer Science');
+INSERT INTO department (department_name) values('ECE'),('EEE'),('CSE'),('IT'),('EIE'),('CE'),('MCA');
