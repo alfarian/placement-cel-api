@@ -5,7 +5,8 @@ module.exports = app => {
   const drive = require("../controllers/drive.controller.js");
   const training = require("../controllers/training.controller.js");
   const notification = require("../controllers/notification.controller.js");
-  
+  const question = require("../controllers/question.controller.js");
+
   // Create a new Student
   app.post("/student", student.create);
 
@@ -49,4 +50,10 @@ module.exports = app => {
 
   // Retrieve all notification
   app.get("/notifications", notification.findAll);
+
+  //placement notification
+  app.post("/question", question.create);
+
+  // Retrieve all notification
+  app.get("/questions", question.findAll);
 };
